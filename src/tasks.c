@@ -34,8 +34,12 @@ int main()
 
     N = 5, C = 2;
     int P[5] = {3, 4, 3, -1, 3}, T[5] = {10, 1, 5, 20, 2};
-    int max, total = 0;
-    int index = P[0];
+    int max, total, leaf = 0;
+    for (int i = 1; i < N; i++)
+        if (P[i] > leaf)
+            leaf = i;
+
+
     for (int i = 1; i < N; i++)
     {
         if (P[i] > index)
@@ -48,13 +52,11 @@ int main()
                 index = P[index];
             }
             printf("%d\n", total);
-            
         }
-        /*P[i] = -2;
+        P[i] = -2;
         printf("%d\n", total);
         if (total > max)
             max = total;
-        i = 1;*/
     }
 
     printf("%d\n", max);

@@ -1,4 +1,4 @@
-# MapOfTasks
+# Map of Tasks
 
 ## Informazioni sul progetto
 
@@ -23,10 +23,19 @@ Venerdì 20.01.2023 - Consegna documentazione e codice sorgente
 ## Analisi del problema
 
 Viene fornita una mappa di dimensioni (N+1) x 2 di numeri interi rappresentante un albero di esercizi.
+\
 I primi due numeri rappresentano il totale di nodi dell’albero (N) e quanti nodi possono venire eliminati (C).
-I restanti numeri, sempre in coppie di due, rappresentano i singoli nodi dell’albero e vengono numerati da 0 a N-1, in relazione alla riga della mappa in cui sono scritti, escludendo la prima che contiene le informazioni N e C. 
-Il primo valore rappresenta la posizione del nodo da risolvere prima di poter eseguire l’esercizio corrente. Il nodo di partenza ha valore -1, mentre gli altri hanno un valore compreso fra 0 e N. Il secondo valore rappresenta il numero di ore richieste per completare l’esercizio e passare al successivo.
+I restanti numeri, sempre in coppie di due, rappresentano i singoli nodi dell’albero e vengono numerati da 0 a N-1, in relazione alla riga della mappa in cui sono scritti, escludendo la prima che contiene le informazioni N e C.
+
+<p align="center"><img src="img/input.png" alt="input" width="75%"/></p>
+
+Il primo valore rappresenta la posizione del nodo da risolvere prima di poter eseguire l’esercizio corrente. Il nodo di partenza ha valore -1, mentre gli altri hanno un valore compreso fra 0 e N.
+\
+Il secondo valore rappresenta il numero di ore richieste per completare l’esercizio e passare al successivo.
 Nodi che appartengo a cammini diversi possono venire risolti in contemporanea.
+
+<p align="center"><img src="img/esempio1.png" alt="esempio 1"/></p>
+
 Lo scopo dell’esercizio è di ottenere il tempo di risoluzione minimo degli esercizi.
 
 
@@ -113,10 +122,38 @@ Il prossimo passo è l'istanziazione delle variabili locali di base e l'identifi
             leaf = i;
 ```
 
+Per il calcolo del cammino con peso maggiore vengono analizzati nuovamente i vettori contenenti i dati attraverso un for loop principale, dove si confrontano i tempi di risoluzione dei compiti nel nostro caso.
+\
+Dunque con un altro ciclo interno si calcola il totale delle ore impiegate fino ad arrivare alla radice, per poi ricavare il percorso massimo con un ultimo confronto.
 
+
+```c
+int index = P[0];
+for (int i = 1; i < N; i++)
+{
+    if (P[i] > index)
+    {
+        index = P[i];
+        total += T[i];
+        while (index != -1)
+        {
+            total += T[index];
+            index = P[index];
+        }
+    }
+    P[i] = -2;
+    if (total > max)
+        max = total;
+}
+```
+
+Per quanto riguarda la complessità di questo algoritmo si può osservare che sono presenti due cicli concatenati, quindi sarebbe di **O(n<sup>2</sup>)**.
 
 ## Test
 
+Il codice finale non è ancora ottimale. Purtroppo, non siamo riusciti a creare una soluzione non greedy, né a ottenere dei risultati soddisfacenti sulla piattaforma dell’esercizio.
+
+<p align="center"><img src="img/test.png" alt="test" width="75%"/></p>
+
 ## Conclusioni
 
-Il codice finale non è ancora ottimale. Purtroppo, non siamo riusciti a creare una soluzione non greedy, né a ottenere dei risultati soddisfacenti sulla piattaforma dell’esercizio.

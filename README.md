@@ -27,14 +27,14 @@ Viene fornita una mappa di dimensioni (N+1) x 2 di numeri interi rappresentante 
 I primi due numeri rappresentano il totale di nodi dell’albero (N) e quanti nodi possono venire eliminati (C).
 I restanti numeri, sempre in coppie di due, rappresentano i singoli nodi dell’albero e vengono numerati da 0 a N-1, in relazione alla riga della mappa in cui sono scritti, escludendo la prima che contiene le informazioni N e C.
 
-<p align="center"><img src="img/input.png" alt="input" width="75%"/></p>
+<p align="center"><img src="img/input.png" alt="input" width="67%"/></p>
 
 Il primo valore rappresenta la posizione del nodo da risolvere prima di poter eseguire l’esercizio corrente. Il nodo di partenza ha valore -1, mentre gli altri hanno un valore compreso fra 0 e N.
 \
 Il secondo valore rappresenta il numero di ore richieste per completare l’esercizio e passare al successivo.
 Nodi che appartengo a cammini diversi possono venire risolti in contemporanea.
 
-<p align="center"><img src="img/esempio1.png" alt="esempio 1"/></p>
+<p align="center"><img src="img/esempio1.PNG" alt="esempio 1"/></p>
 
 Lo scopo dell’esercizio è di ottenere il tempo di risoluzione minimo degli esercizi.
 

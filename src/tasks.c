@@ -37,6 +37,7 @@ int main()
     for (int i = 1; i < N; i++)
         if (P[i] > leaf)
             leaf = i;
+    int index = P[0];
     for (int i = 1; i < N; i++)
     {
         if (P[i] > index)

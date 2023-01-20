@@ -38,6 +38,12 @@ Dopodiché si cerca di individuare i nodi foglia (gli ultimi compiti assegnati d
 \
 Quindi viene preso in considerazione il cammino di carico maggiore perché da questo verranno annullati i nodi più pesanti, così da calcolare infine il peso del grafo semplificato.
 
+### Pseudocodice
+
+Lo pseudocodice permette di avere una prima soluzione del problema senza dover scrivere effettivamente il codice sorgente. Questa versione semplificata serve per stendere l'algoritmo passo dopo passo e avere una visione generale delle funzioni che risolvono ogni piccola task.
+
+Gli pseudocodici sviluppati si trovano in questo [link](Progettazione/pseudo.md)
+
 ## Implementazione
 
 

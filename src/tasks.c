@@ -24,22 +24,19 @@ void sort(int P[], int T[], int N)
 
 int main()
 {
-    /*printf("Inserisci prima N poi C: ");
+    printf("Inserisci prima N poi C: ");
     scanf("%d %d", &N, &C);
     printf("Inserisci le N cifre:\n");
     for (int i = 0; i < N; i++)
         scanf("%d %d", &P[i], &T[i]);
     for (int i = 0; i < N; i++)
-        printf("%d %d\n", P[i], T[i]);*/
-
+        printf("%d %d\n", P[i], T[i]);
     N = 5, C = 2;
     int P[5] = {3, 4, 3, -1, 3}, T[5] = {10, 1, 5, 20, 2};
     int max, total, leaf = 0;
     for (int i = 1; i < N; i++)
         if (P[i] > leaf)
             leaf = i;
-
-
     for (int i = 1; i < N; i++)
     {
         if (P[i] > index)

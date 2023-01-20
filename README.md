@@ -38,7 +38,7 @@ Prima di iniziare con lo sviluppo della soluzione è importante creare diagrammi
 
 In questo caso viene sviluppato innanzitutto un diagramma di flusso per capire come si comporta l'algoritmo in base alle diverse situazioni.
 
-![flowchart](Progettazione/flowchart.png)
+<p align="center"><img src="Progettazione/flowchart.png" alt="flowchart"/></p>
 
 Il programma parte facendo una "scansione" dei dati ricevuti in input da parte dell'utente in modo da costruire in seguito la matrice di adiacenza del grafo.
 \
@@ -50,9 +50,68 @@ Quindi viene preso in considerazione il cammino di carico maggiore perché da qu
 
 Lo pseudocodice permette di avere una prima soluzione del problema senza dover scrivere effettivamente il codice sorgente. Questa versione semplificata serve per stendere l'algoritmo passo dopo passo e avere una visione generale delle funzioni che risolvono ogni piccola task.
 
-Gli pseudocodici sviluppati si trovano in questo [link](Progettazione/pseudo.md)
+Gli pseudocodici sviluppati si trovano in questo [link](Progettazione/pseudo.md).
 
 ## Implementazione
+
+L'algoritmo che risolve il problema è stato sviluppato tramite linguaggio C, come richiesto dai docenti e dalla [piattaforma](https://training.olinfo.it) di riferimento per eseguire i test.
+
+L'intestazione del documento con il codice sorgente contiene la dichiarazione delle librerie necessarie, i valori costanti e le variabili globali (input).
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAXN 10000
+#define MAXC 100
+
+int N, C, P[MAXN], T[MAXN];
+```
+
+La prima funzione implementata è stata quella di `ordinamento dei dati in input`, infatti quest'ultima permette di identificare prima di tutto la radice e poi di riorganizzare gli array.
+
+```c
+void sort(int P[], int T[], int N)
+{
+    int temp_P = P[0];
+    int temp_T = T[0];
+    for (int i = 0; i < N; i++)
+    {
+        if (P[i] == -1)
+        {
+            P[0] = P[i];
+            T[0] = T[i];
+            P[i] = temp_P;
+            T[i] = temp_T;
+        }
+    }
+}
+```
+
+La complessità della funzione è di **O(n)**.
+
+Nel metodo `main` viene implementato il ciclo di vita principale del programma, dunque vengono messi insieme i vari algoritmi e funzione per generare la soluzione.
+
+Inizialmente viene chiesto all'utente di inserire i dati di input necessari:
+
+```c
+printf("Inserisci prima N poi C: ");
+scanf("%d %d", &N, &C);
+printf("Inserisci le N cifre:\n");
+for (int i = 0; i < N; i++)
+    scanf("%d %d", &P[i], &T[i]);
+for (int i = 0; i < N; i++)
+    printf("%d %d\n", P[i], T[i]);
+```
+
+Il prossimo passo è l'istanziazione delle variabili locali di base e l'identificazione del nodo foglia tramite un semplice ciclo:
+
+```c
+ int max, total, leaf = 0;
+    for (int i = 1; i < N; i++)
+        if (P[i] > leaf)
+            leaf = i;
+```
 
 
 

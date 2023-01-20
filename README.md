@@ -119,3 +119,4 @@ Il prossimo passo è l'istanziazione delle variabili locali di base e l'identifi
 
 ## Conclusioni
 
+Il codice finale non è ancora ottimale. Purtroppo, non siamo riusciti a creare una soluzione non greedy, né a ottenere dei risultati soddisfacenti sulla piattaforma dell’esercizio.

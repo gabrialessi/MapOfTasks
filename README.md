@@ -157,3 +157,8 @@ Il codice finale non è ancora ottimale. Purtroppo, non siamo riusciti a creare 
 
 ## Conclusioni
 
+Questa esperienza è stata molto istruttiva.
+
+Il codice da implementare era relativamente complesso, specialmente per la creazione di un codice non greedy e gli standard richiesti nella consegna. Per proseguire abbiamo dovuto imparare a suddividere il problema in piccoli pezzi, per poi adattare i vari codici in modo che potessero comunicare tra di loro.
+
+Abbiamo inoltre imparato a riassumere i nostri progressi, cosa che ci verrà senza dubbio utile nel futuro, e a presentare in pubblico.
